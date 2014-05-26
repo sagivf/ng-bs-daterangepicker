@@ -1,5 +1,5 @@
 {
-  "name": "ng-bs-daterangepicker-sagiv",
+  "name": "ng-bs-daterangepicker",
   "version": "0.0.3",
   "main": "./src/ng-bs-daterangepicker.js",
   "dependencies": {
