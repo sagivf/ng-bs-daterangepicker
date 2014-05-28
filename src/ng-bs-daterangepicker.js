@@ -1,3 +1,5 @@
+/*global angular,moment */
+
 /**
  * @license ng-bs-daterangepicker v0.0.1
  * (c) 2013 Luis Farzati http://github.com/luisfarzati/ng-bs-daterangepicker
@@ -65,14 +67,14 @@ angular.module('ngBootstrap', []).directive('input', function ($compile, $parse)
 			});
 			
 			if ($attributes.showCalendars && $parse($attributes.showCalendars)($scope) === true) {
-          			$element.on('show.daterangepicker', function (ev, picker) {
-          				picker.showCalendars();
-        			});
-      			}
-      			
-      			$scope.$on('$destroy', function() {
-        			$element.data('daterangepicker').remove();
-      			});
+        $element.on('show.daterangepicker', function (ev, picker) {
+            picker.showCalendars();
+        });
+      }
+
+      $scope.$on('$destroy', function() {
+        $element.data('daterangepicker').remove();
+      });
 		}
 	};
 });
