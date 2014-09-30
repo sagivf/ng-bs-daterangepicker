@@ -69,6 +69,10 @@ angular.module('ngBootstrap', []).directive('input', function ($compile, $parse)
           				picker.showCalendars();
         			});
       			}
+      			
+      			$scope.$on('$destroy', function() {
+        			$element.data('daterangepicker').remove();
+      			});
 		}
 	};
 });
