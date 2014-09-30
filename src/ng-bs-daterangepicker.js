@@ -62,7 +62,13 @@ angular.module('ngBootstrap', []).directive('input', function ($compile, $parse)
 					ngModel.$setViewValue({ startDate: start, endDate: end });
 					ngModel.$render();
 				});
-			});			
+			});
+			
+			if ($attributes.showCalendars && $parse($attributes.showCalendars)($scope) === true) {
+          			$element.on('show.daterangepicker', function (ev, picker) {
+          				picker.showCalendars();
+        			});
+      			}
 		}
 	};
 });
